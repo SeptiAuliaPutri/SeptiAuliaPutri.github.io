@@ -13,54 +13,133 @@
     background-position: center;
 }
 
+body {
+    background-color: var(--primary-color);
+
+    --primary-color: white;
+    --secondary-color: #F39422;
+    --tertiary-color: #537EC5;
+    --other-color: #293A80;
+
+    --nav-items: black;
+}
+
+body.dark {
+    --primary-color: black;
+    --secondary-color: #212121;
+    --tertiary-color: #424242;
+    --other-color: #616161;
+
+    --nav-items: white;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon svg {
+    width: 36px;
+    fill: var(--nav-items);
+}
+
+#light {
+    display: block;
+}
+
+#night {
+    display: none;
+}
+
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 7%;
+    padding: 40px 7%;
 }
 
 .logo{
     width: 200px;
-    cursor: pointer;
-    
+    cursor: pointer; 
+    margin-right: 250px;
 }
 
 .nav-links li{
     list-style: none;
     display: inline-block;
-    margin: 10px 30px;
+    margin: 15px;
 
 }
 
 .nav-links li a{
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 
-.register-btn{
-    background: #fff;
+.register-btn {
+    flex-basis: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-left: auto;
+}
+
+.register-btn img{
+    min-width: 30px;
+    margin-left: 30px;
+    height: 0px;
+}
+
+.register-btn button {
+    padding: 5px 5px;
+    border: 0;
+    background-color: #fff;
     color: #000;
-    padding: 8px 20px;
     border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: scale 100ms, background-color 150ms;
+    height: 50px;
+}
+
+.register-btn button:hover {
+    background-color: white;
+    scale: 70%;
+}
+
+.popuptext {
+    visibility: hidden;
+    width: 160=px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    margin-left: -100px;
+}
+
+.popuptext.show {
+    visibility: visible;
 }
 
 .container{
     padding: 0, 7%;
 }
 
-.header h1{
-    font-size: 4vw;
-    font-weight: 700;
+.header h2{
+    font-size: 5vw;
+    font-weight: 500;
     color: pink;
     text-align: center;
     padding-top: 10%;
+    font-family: Haettenschweiler, sans-serif
 }
 
 .header p{
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-weight: 500;
     color: #fff;
     text-align: center;
@@ -71,7 +150,7 @@ nav{
     margin: 50px 0 20px;
     font-size: 2.2vw;
     font-weight: 600;
-    color: #333;
+    color: var(--nav-items);
     padding-left: 6%;  
 }
 
@@ -103,12 +182,12 @@ nav{
 
 .about-msg{
     text-align: center;
-    margin: 80px 0;
+    margin: 90px 0;
     font-size: 17px;
 }
 
 .about-msg h2{
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 10px;
     font-weight: 1000;
     color: skyblue;
@@ -117,6 +196,7 @@ nav{
 .about-msg p{
     margin: 0.8rem 0 1.8rem;
     line-height: 1.7;
+    color: var(--nav-items);
 } 
 
 .footer{
@@ -125,7 +205,7 @@ nav{
 }
 
 .footer hr{
-    background: #999;
+    background: skyblue;
     height: 1px;
     width: 100%;
     border: 0;
@@ -134,6 +214,7 @@ nav{
 
 .footer p{
     padding-bottom: 15px;
+    color: var(--nav-items);
 }
 
 nav .fa-bars{
@@ -179,3 +260,24 @@ nav .fa-bars{
     }
 }
 
+/* @media screen and (min-width: 992px) {
+    #theme-toggle-btn{
+        margin-left: 2rem;
+    }
+}
+
+#theme-toggle-btn:checked::after{
+    right: 0;
+    left: auto;
+    background-color: var(--dark);
+}
+
+#theme-toggle-btn:checked{
+    background-color: #fff;
+    border-color: #fff;
+
+}
+
+body.dark-mode. #about{
+
+} */ 
